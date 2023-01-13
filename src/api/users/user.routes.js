@@ -48,7 +48,7 @@ router.put("/edit/:id", async (req, res) => {
         const usuario = req.body;
         const usuarioModificado = new Usuario(usuario);
         usuarioModificado._id = id;
-        const usuarioActualizado = await Usuario.findByIdAndUpdate(id);
+        const usuarioActualizado = await Usuario.findByIdAndUpdate(id, usuarioModificado);
         return res.status(200).json({
             mensaje: "Usuario modificado",
             usuarioNuevo: usuarioActualizado,
