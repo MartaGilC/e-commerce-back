@@ -30,7 +30,7 @@ router.post("/create", async (req, res) => {
     const nuevaPrenda = new Prenda(prenda);
     console.log(nuevaPrenda);
     const creado = await nuevaPrenda.save();
-return res.status(201).json(creado);
+return res.status(200).json(creado);
     } catch (error) {
     return "error al crear ropa", error;
     }
