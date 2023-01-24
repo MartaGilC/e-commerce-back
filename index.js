@@ -2,6 +2,7 @@ const express = require("express");
 const { connectDB } = require("./src/utils/db/db");
 require("dotenv").config();
 const cors = require('cors');
+require("dotenv").config();
 const RutaRopa = require("./src/api/ropa/ropa.routes");
 const RutaUser = require("./src/api/users/user.routes");
 const RutaBeauty = require("./src/api/beauty/beauty.routes")

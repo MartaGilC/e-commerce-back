@@ -1,5 +1,7 @@
 const express = require("express");
 const Prenda = require("./ropa.model");
+
+
 const router = express.Router();
 
 router.get("/", async(req, res) => {
@@ -22,7 +24,7 @@ router.get("/:id", async(req, res) => {
     }
 })
 
-router.post("/create", async (req, res) => {
+router.post("/create" ,async (req, res) => {
     try {
         console.log(req.body)
     const prenda = req.body;
