@@ -1,6 +1,7 @@
 const express = require("express");
 const Beauty = require("./beauty.model");
 const router = express.Router();
+const { isAuth, isAdmin } = require("../../middlewares/auth");
 
 router.get("/", async(req, res) => {
     try {

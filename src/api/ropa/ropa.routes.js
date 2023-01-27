@@ -1,6 +1,6 @@
 const express = require("express");
 const Prenda = require("./ropa.model");
-
+const { isAuth, isAdmin } = require("../../middlewares/auth");
 
 const router = express.Router();
 
@@ -24,7 +24,7 @@ router.get("/:id", async(req, res) => {
     }
 })
 
-router.post("/create" ,async (req, res) => {
+router.post("/create",async (req, res) => {
     try {
         console.log(req.body)
     const prenda = req.body;
@@ -38,7 +38,7 @@ return res.status(200).json(creado);
     }
 });
 
-router.delete("/delete/:id", async (req, res) => {
+router.delete("/delete/:id",[isAdmin], async (req, res) => {
     try{
         const id = req.params.id;
         await Prenda.findByIdAndDelete(id);
